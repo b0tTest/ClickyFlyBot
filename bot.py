@@ -21,14 +21,15 @@ bot = Client('clickyfly bot',
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     await message.reply(
-        text=f"**Hi {message.chat.first_name}!** \n\nThis is **ClickyFly URL Shorter Bot**. Just send me any big link and get short link.",
+        text=f"**Hi {message.chat.first_name}!** \n\nThis is **ClickyFly URL Shorter Bot**. Just send me any big link and get short link.\n\n**Made with ♥️ by @MyTestBotZ**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Bots Updates Channel', url='https://t.me/Discovery_Updates')
+                    InlineKeyboardButton('Bots Updates Channel', url='https://t.me/MyTestBotZ')
                 ],
                 [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
+                    InlineKeyboardButton('Creator', url='https://telegram.me/OO7ROBOT'),
+                    InlineKeyboardButton('OtherBotZc', url='t.me/mybotzlist")
                 ]
             ]
         )
@@ -41,7 +42,7 @@ async def link_handler(bot, message):
     try:
         short_link = await get_shortlink(link)
         await message.reply(
-            text=f"Here is your short link: {short_link}",
+            text=f"Here is your short link: {short_link}\n\nShorten by @TG_ClickyFlybot",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
